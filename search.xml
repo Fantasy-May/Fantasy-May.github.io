@@ -1,21 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/03/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>云计算作业</title>
+    <url>/2022/03/14/%E4%BA%91%E8%AE%A1%E7%AE%97%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<h5 id="1-1云使能技术包括哪些技术组件？用一句话简要说明其关键特征。"><a href="#1-1云使能技术包括哪些技术组件？用一句话简要说明其关键特征。" class="headerlink" title="1-1云使能技术包括哪些技术组件？用一句话简要说明其关键特征。"></a>1-1云使能技术包括哪些技术组件？用一句话简要说明其关键特征。</h5><p><strong>1.技术组件</strong></p>
+<table>
+<tr>
+  <th>
+    宽带网络和Internet架构
+  </th>
+</tr>
+  <tr>
+  <th>
+    数据中心技术
+  </th>
+</tr>
+  <tr>
+  <th>
+    虚拟化技术
+  </th>
+</tr>
+  <tr>
+  <th>
+    Web技术
+  </th>
+</tr>
+  <tr>
+  <th>
+    多租户技术
+  </th>
+</tr>
+    <tr>
+  <th>
+    服务技术
+  </th>
+</tr>
+</table>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><strong>2.关键特征</strong></p>
+<p>​    所有的云必须连接到网络，同时利用数据中心技术集中存放IT资源，应用虚拟化技术将物理IT资源转换为虚拟IT资源，从而提供了硬件无关性、服务器整合、资源复制、对资源更强的支持和可扩展性；使用Web技术作为云服务的实现介值和管理接口；设计多租户技术使多个用户在逻辑上同时访问一个应用；其中的服务技术是云计算的基石，形成了“作为服务”的云交付模型的基础。</p>
+<h5 id="1-2列举至少3种虛拟化软件，并用一句话概括其特点。"><a href="#1-2列举至少3种虛拟化软件，并用一句话概括其特点。" class="headerlink" title="1-2列举至少3种虛拟化软件，并用一句话概括其特点。"></a>1-2列举至少3种虛拟化软件，并用一句话概括其特点。</h5><ul>
+<li><p>VMware系列<br>VMware workstation(适合单台计算机使用)、VMware vsphere(VMware esxi)、VMware Fusion(Mac)</p>
+</li>
+<li><p>Openvz 开源 基于linux 虚拟机和宿主机共用一个内核</p>
+</li>
+<li><p>VirtualBox 开源<br>概括特点：把一台物理计算机虚拟成多台逻辑计算机，每个逻辑计算机里面可以运行不同的操作系统，相互不受影响，实现对于硬件资源的充分利用</p>
+</li>
+</ul>
 ]]></content>
+      <tags>
+        <tag>作业</tag>
+      </tags>
   </entry>
 </search>
