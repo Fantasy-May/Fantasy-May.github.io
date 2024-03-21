@@ -1,9 +1,225 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Forensics</title>
-    <url>/2024/03/20/Forensics/</url>
-    <content><![CDATA[<h3 id="Scenario-1-Domain-Name-System-DNS-Server-Denial-of-Service-DoS"><a href="#Scenario-1-Domain-Name-System-DNS-Server-Denial-of-Service-DoS" class="headerlink" title="Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)"></a>Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)</h3><p>On a Saturday afternoon, external users start having problems accessing the organization’s public websites. Over the next hour, the problem worsens to the point where nearly every access attempt fails.</p>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
+  <meta name="msapplication-config" content="/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lusitana:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)On a Saturday afternoon, external users start having problems accessing the organization’s public websites. Over the next hour, the p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Forensics">
+<meta property="og:url" content="http://example.com/2024/03/20/Forensics/index.html">
+<meta property="og:site_name" content="Fantasy-May&#39;s Blog">
+<meta property="og:description" content="Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)On a Saturday afternoon, external users start having problems accessing the organization’s public websites. Over the next hour, the p">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/03/20/Forensics/image-20240225002215869.png">
+<meta property="og:image" content="http://example.com/2024/03/20/Forensics/image-20240225003218386.png">
+<meta property="article:published_time" content="2024-03-20T04:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-21T17:21:30.576Z">
+<meta property="article:author" content="Fantasy-May">
+<meta property="article:tag" content="Quiz1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/03/20/Forensics/image-20240225002215869.png">
+
+<link rel="canonical" href="http://example.com/2024/03/20/Forensics/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en-US'
+  };
+</script>
+
+  <title>Forensics | Fantasy-May's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fantasy-May's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en-US">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/20/Forensics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/IMG_0039.png">
+      <meta itemprop="name" content="Fantasy-May">
+      <meta itemprop="description" content="Hello World!">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fantasy-May's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Forensics
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-03-20 12:00:00" itemprop="dateCreated datePublished" datetime="2024-03-20T12:00:00+08:00">2024-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-03-22 01:21:30" itemprop="dateModified" datetime="2024-03-22T01:21:30+08:00">2024-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cyber-Security/" itemprop="url" rel="index"><span itemprop="name">Cyber Security</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="Scenario-1-Domain-Name-System-DNS-Server-Denial-of-Service-DoS"><a href="#Scenario-1-Domain-Name-System-DNS-Server-Denial-of-Service-DoS" class="headerlink" title="Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)"></a>Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)</h3><p>On a Saturday afternoon, external users start having problems accessing the organization’s public websites. Over the next hour, the problem worsens to the point where nearly every access attempt fails.</p>
 <p>Meanwhile, a member of the organization’s networking staff responds to alerts from an Internet border router and determines that the organization’s Internet bandwidth is being consumed by an unusually large volume of User Datagram Protocol (UDP) packets to and from both the organization’s public DNS servers.</p>
 <p>Analysis of the traffic shows that the DNS servers are receiving high volumes of requests from a single external IP address. Also, all the DNS requests from that address come from the same source port.</p>
 <span id="more"></span>
@@ -421,211 +637,211 @@
 </ul>
 <h4 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h4><h5 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h5><p>Unlike FileSystem, and does not have any index</p>
 <h5 id="Volatility"><a href="#Volatility" class="headerlink" title="Volatility"></a>Volatility</h5><p>When an application changes behavior, its data in memory will change instantly</p>
-]]></content>
-      <categories>
-        <category>Cyber Security</category>
-      </categories>
-      <tags>
-        <tag>Quiz1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Security &amp; Risk Management</title>
-    <url>/2024/03/01/Security%20&amp;%20Risk%20Management/</url>
-    <content><![CDATA[<h4 id="Security-Objectives"><a href="#Security-Objectives" class="headerlink" title="Security Objectives"></a>Security Objectives</h4><h5 id="CIA-Triad"><a href="#CIA-Triad" class="headerlink" title="CIA Triad"></a>CIA Triad</h5><ul>
-<li>Confidentiality</li>
-<li>Integrity</li>
-<li>Availiability</li>
-</ul>
-<span id="more"></span>
 
-<h5 id="Parkerian-Hexad-objectives"><a href="#Parkerian-Hexad-objectives" class="headerlink" title="Parkerian Hexad objectives"></a>Parkerian Hexad objectives</h5><ul>
-<li>Confidentiality</li>
-<li>Integrity</li>
-<li>Availiability</li>
-<li>Authenticity</li>
-<li>Possession (Control)</li>
-<li>Utility</li>
-</ul>
-<h5 id="McCumber-Cube"><a href="#McCumber-Cube" class="headerlink" title="McCumber Cube"></a>McCumber Cube</h5><ul>
-<li><p>security goals: CIA</p>
-</li>
-<li><p>information states: transimission, storage, processing</p>
-</li>
-<li><p>counter measures: technology, people, policy&amp;practice</p>
-</li>
-</ul>
-<h5 id="Functional-perspective-of-security"><a href="#Functional-perspective-of-security" class="headerlink" title="Functional perspective of security"></a>Functional perspective of security</h5><p>What should the system do?</p>
-<h5 id="Assurance-perspective-of-security"><a href="#Assurance-perspective-of-security" class="headerlink" title="Assurance perspective of security"></a>Assurance perspective of security</h5><p>How do we ensure that they are achieved? Controls …</p>
-<h4 id="Common-Criteria-CC"><a href="#Common-Criteria-CC" class="headerlink" title="Common Criteria (CC)"></a>Common Criteria (CC)</h4><p>Basis for evaluation of security propertys of IT products; standard for IT security evaluation</p>
-<p>Common set of requirements for security <strong>functionality</strong> and <strong>assurance</strong> measures (<strong>IT security requirements</strong>)</p>
-<p>Permits comparability between results of independent security evaluations</p>
-<p>Useful guide for: development, evaluation, procurement</p>
-<h5 id="shortcomings"><a href="#shortcomings" class="headerlink" title="shortcomings"></a>shortcomings</h5><ul>
-<li>consuming time and money</li>
-<li>assurance is limited to TOE</li>
-<li>minor changes in design/implement will make products invalid</li>
-</ul>
-<h4 id="Quantitative-Risk-Analysis"><a href="#Quantitative-Risk-Analysis" class="headerlink" title="Quantitative Risk Analysis"></a>Quantitative Risk Analysis</h4><h5 id="ALE"><a href="#ALE" class="headerlink" title="ALE"></a>ALE</h5><p>SLE (Single loss expectancy) = AV(Asset value)*EF(Explosure factor)</p>
-<p>ALE(Annualized loss expectancy) = SLE*ARO(Annual rate of occurence)</p>
-<h6 id="shortcommings"><a href="#shortcommings" class="headerlink" title="shortcommings"></a>shortcommings</h6><ul>
-<li><p>We cannot distinguish high-frequency, low-impact events from low frequency, high-impact events based on such a single simplified number</p>
-</li>
-<li><p>False sense of accuracy</p>
-</li>
-</ul>
-<h5 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h5><ul>
-<li>different strategies will have different cash flow</li>
-<li>secondary effects, intangible assets</li>
-<li>a lot of guess work</li>
-</ul>
-<h4 id="Actualizing-risk-analysis"><a href="#Actualizing-risk-analysis" class="headerlink" title="Actualizing risk analysis"></a>Actualizing risk analysis</h4><h5 id="Attack-Trees"><a href="#Attack-Trees" class="headerlink" title="Attack Trees"></a>Attack Trees</h5><p>Qualify an attack in different dimensions </p>
-<ul>
-<li><p>leaf nodes: attack initiation</p>
-</li>
-<li><p>root node: attack goal</p>
-</li>
-<li><p>and: conjuct to achieve the goal</p>
-</li>
-<li><p>or: different ways to achieve the goal</p>
-</li>
-</ul>
-<h6 id="Attack-Trees-Can"><a href="#Attack-Trees-Can" class="headerlink" title="Attack Trees Can"></a>Attack Trees Can</h6><ul>
-<li>be qualified with attributes(time, money, probability)</li>
-<li>made as detailed as possible</li>
-<li>identify the perferred attack vectors</li>
-</ul>
-<h5 id="Fault-Tree-Analysis-FTA"><a href="#Fault-Tree-Analysis-FTA" class="headerlink" title="Fault Tree Analysis (FTA)"></a>Fault Tree Analysis (FTA)</h5><p>FTA is a general purpose technique used for system reliability and safety engineering, risk assessment</p>
-<ul>
-<li><p>an undesirable system state</p>
-</li>
-<li><p>arrived at using Boolean logic combining series of lower-level events</p>
-</li>
-</ul>
-<h5 id="Event-Tree-Analysis-ETA"><a href="#Event-Tree-Analysis-ETA" class="headerlink" title="Event Tree Analysis (ETA)"></a>Event Tree Analysis (ETA)</h5><p>Lays a path for accessing probability of various outcomes (in a single initiating event)</p>
-<h5 id="Failure-Mode-amp-Effect-Analysis"><a href="#Failure-Mode-amp-Effect-Analysis" class="headerlink" title="Failure Mode &amp; Effect Analysis"></a>Failure Mode &amp; Effect Analysis</h5><p>Review as many components/subsystems as possible to identify failure modes, their causes and effects</p>
-<h6 id="RPN"><a href="#RPN" class="headerlink" title="RPN"></a>RPN</h6><p>Risk probability number (RPN) = prob * det * sev</p>
-<ul>
-<li><p>prob (prob that the failure will <strong>occur</strong>)</p>
-</li>
-<li><p>det (prob that the failure will <strong>not be detected</strong>)</p>
-</li>
-<li><p>sev (<strong>damage</strong> that the failure mode may cause; <strong>severity</strong>)</p>
-</li>
-</ul>
-<h4 id="Controls"><a href="#Controls" class="headerlink" title="Controls"></a>Controls</h4><h5 id="According-to-purpose"><a href="#According-to-purpose" class="headerlink" title="According to purpose"></a>According to purpose</h5><ul>
-<li>preventive (authenticate)</li>
-<li>detective (detect)</li>
-<li>corrective (backup)</li>
-</ul>
-<h5 id="According-to-nature"><a href="#According-to-nature" class="headerlink" title="According to nature"></a>According to nature</h5><ul>
-<li>physical (who can access data center)</li>
-<li>procedual (response process)</li>
-<li>technical (authentication)</li>
-<li>legal &amp; regulatory / compliance (laws)</li>
-</ul>
-<h5 id="Designing-Controls"><a href="#Designing-Controls" class="headerlink" title="Designing Controls"></a>Designing Controls</h5><h6 id="Layered-Defence"><a href="#Layered-Defence" class="headerlink" title="Layered Defence"></a>Layered Defence</h6><ul>
-<li>Apply Supplementary Controls</li>
-<li>Independent Controls (2FA)</li>
-</ul>
-<h6 id="Defence-in-Depth"><a href="#Defence-in-Depth" class="headerlink" title="Defence in Depth"></a>Defence in Depth</h6><ul>
-<li><p>Defence in depth requires multi-layered defence</p>
-</li>
-<li><p>strategy: People, Technology, Operations</p>
-</li>
-</ul>
-<h4 id="Vulnerabilities-can-be-created-in"><a href="#Vulnerabilities-can-be-created-in" class="headerlink" title="Vulnerabilities can be created in"></a>Vulnerabilities can be created in</h4><p>Design, Implementation, Configureation</p>
-<h4 id="3-best-practices-for-data-backup"><a href="#3-best-practices-for-data-backup" class="headerlink" title="3 best practices for data backup"></a>3 best practices for data backup</h4><ul>
-<li>regular and frequency backup</li>
-<li>regular testing</li>
-<li>encrypt</li>
-</ul>
-<h4 id="Information-Security"><a href="#Information-Security" class="headerlink" title="Information Security"></a>Information Security</h4><h5 id="Cybersecurity-amp-Infosec-Differences"><a href="#Cybersecurity-amp-Infosec-Differences" class="headerlink" title="Cybersecurity &amp; Infosec Differences"></a>Cybersecurity &amp; Infosec Differences</h5><ul>
-<li>Infosec protects data across all mediums, Cybersecurity protects data in cyberspace</li>
-<li>Cybersecurity protects non-information based assets </li>
-<li>cybersecurity: Antivirus software, firewall</li>
-<li>infosec: Encrypt data, providing security awareness training</li>
-</ul>
-<h5 id="Information-Risk-Management-Information-Security"><a href="#Information-Risk-Management-Information-Security" class="headerlink" title="Information Risk Management (Information Security)"></a>Information Risk Management (Information Security)</h5><p>Prioritize resource allocation</p>
-<p>Given limited budget &amp;  no perfect security, minimize loss/damage</p>
-<h5 id="Information-Security-Continuous-Monitoring-ISCM"><a href="#Information-Security-Continuous-Monitoring-ISCM" class="headerlink" title="Information Security Continuous Monitoring (ISCM)"></a>Information Security Continuous Monitoring (ISCM)</h5><ul>
-<li><p>tier-1: high level governance issues (risk)</p>
-</li>
-<li><p>tier-2: core <strong>missions/business processes</strong></p>
-</li>
-<li><p>tier-3: <strong>information system</strong> perspective</p>
-</li>
-</ul>
-<h4 id="Sarbanes-Oxley-Act"><a href="#Sarbanes-Oxley-Act" class="headerlink" title="Sarbanes-Oxley Act"></a>Sarbanes-Oxley Act</h4><ul>
-<li>CEO and CFO must certify that reports are accurance and complete</li>
-<li>Assessment must be reviewed and judged by an outside auditing firm</li>
-</ul>
-<h4 id="Personal-Data-Protect-Act-PDPA"><a href="#Personal-Data-Protect-Act-PDPA" class="headerlink" title="Personal Data Protect Act (PDPA)"></a>Personal Data Protect Act (PDPA)</h4><p>Personal data protection commission (PDPC) organizations are required to:</p>
-<ul>
-<li>implement policies and practices to protect personal data</li>
-<li>data protection officer (DPO) oversee the data protection responsibilities</li>
-</ul>
-<h4 id="NIST-Engineering-Principles-for-IT-Security"><a href="#NIST-Engineering-Principles-for-IT-Security" class="headerlink" title="NIST (Engineering Principles for IT Security)"></a>NIST (Engineering Principles for IT Security)</h4><p>initation, develop/acquisition, implement, operate/maintain, disposal</p>
-<h4 id="Factors-leading-to-enlarged-attack-surface"><a href="#Factors-leading-to-enlarged-attack-surface" class="headerlink" title="Factors leading to enlarged attack surface"></a>Factors leading to enlarged attack surface</h4><p>connectivity, complexity, extensibility</p>
-<h4 id="Business-Impact-Analysis-BIA"><a href="#Business-Impact-Analysis-BIA" class="headerlink" title="Business Impact Analysis (BIA)"></a>Business Impact Analysis (BIA)</h4><ol>
-<li>identify critical things (products, processes, services) that need to be restore, meet its critical needs and  statisfy regulations</li>
-<li>identify activities that support critical things</li>
-<li>assest impact overtime of not performing activities</li>
-<li>set prioritized timeframes (eg. maximus tolerable downtime)</li>
-<li>identify dependencies (includes 3-rd)</li>
-</ol>
-<h4 id="Business-Continuity-Planning-BCP"><a href="#Business-Continuity-Planning-BCP" class="headerlink" title="Business Continuity Planning (BCP)"></a>Business Continuity Planning (BCP)</h4><ul>
-<li>Conduct BIA and RA (establish business recovery prorities, timescale&amp;minimum requirements)</li>
-<li>BC Strategy Formulation (options for meeting business recovery prorities, timescale&amp;minimum requirements)</li>
-<li>BCP Production (plans, organizations, detailed action task lists)</li>
-<li>BCP Testing</li>
-<li>BC Awareness</li>
-<li>Ongoing BCP Maintenance</li>
-</ul>
-<h4 id="Disaster-Recover-Plan"><a href="#Disaster-Recover-Plan" class="headerlink" title="Disaster Recover Plan"></a>Disaster Recover Plan</h4><h5 id="Plan-activation"><a href="#Plan-activation" class="headerlink" title="Plan activation"></a>Plan activation</h5><ul>
-<li>triage</li>
-<li>notification </li>
-<li>escalation</li>
-<li>damage assessment </li>
-<li>declaring a disaster</li>
-<li>mobilization of response team</li>
-</ul>
-<h5 id="Disaster-Recover-Plan-and-Cyber-Incident-Response-Plan"><a href="#Disaster-Recover-Plan-and-Cyber-Incident-Response-Plan" class="headerlink" title="Disaster Recover Plan and Cyber Incident Response Plan"></a>Disaster Recover Plan and Cyber Incident Response Plan</h5><h6 id="DRP-recover"><a href="#DRP-recover" class="headerlink" title="DRP (recover)"></a>DRP (recover)</h6><p>Actives after major systems disruptions with long-term effects</p>
-<p>To recover and reestablish functionalities</p>
-<h6 id="CIRP-mitigating-impact"><a href="#CIRP-mitigating-impact" class="headerlink" title="CIRP (mitigating impact)"></a>CIRP (mitigating impact)</h6><p>Masticate and isolate affected systems</p>
-<p>To minimize loss of information</p>
-<h4 id="Overall-Planning-amp-Management"><a href="#Overall-Planning-amp-Management" class="headerlink" title="Overall Planning &amp; Management"></a>Overall Planning &amp; Management</h4><h5 id="Emergency-Response"><a href="#Emergency-Response" class="headerlink" title="Emergency Response"></a>Emergency Response</h5><ul>
-<li>Time critical</li>
-<li>Initial control of emergency situation</li>
-<li>Save human life</li>
-<li>Stabilizing, security, damage assessment</li>
-</ul>
-<h5 id="Crisis-Management"><a href="#Crisis-Management" class="headerlink" title="Crisis Management"></a>Crisis Management</h5><ul>
-<li>Strategic direction/Policy issues</li>
-<li>Crisis communications</li>
-<li>External liaison</li>
-<li>Service recovery coordination</li>
-</ul>
-<h5 id="Bussiness-Recovery"><a href="#Bussiness-Recovery" class="headerlink" title="Bussiness Recovery"></a>Bussiness Recovery</h5><ul>
-<li>Phased Recovery of business-critical process/servies</li>
-<li>Disaster Recovery</li>
-</ul>
-<h4 id="PDCA-cycle"><a href="#PDCA-cycle" class="headerlink" title="PDCA cycle"></a>PDCA cycle</h4><p>A manage method for control/improvement of process/products</p>
-<ul>
-<li>Plan (establish)</li>
-<li>Do (implement)</li>
-<li>Check (monitor, review &amp; audit)</li>
-<li>Act (maintain, improve)</li>
-</ul>
-<h4 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h4><h5 id="non-conformity"><a href="#non-conformity" class="headerlink" title="non-conformity"></a>non-conformity</h5><p>non-fulfilled of a requirement</p>
-<h5 id="policy"><a href="#policy" class="headerlink" title="policy"></a>policy</h5><p>overall intention and direction as formally expressed by management</p>
-<h5 id="risk"><a href="#risk" class="headerlink" title="risk"></a>risk</h5><p>effect of uncertainty on objectives</p>
-]]></content>
-      <categories>
-        <category>Cyber Security</category>
-      </categories>
-      <tags>
-        <tag>Quiz1</tag>
-      </tags>
-  </entry>
-</search>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Quiz1/" rel="tag"># Quiz1</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/03/01/Security%20&%20Risk%20Management/" rel="prev" title="Security & Risk Management">
+      <i class="fa fa-chevron-left"></i> Security & Risk Management
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scenario-1-Domain-Name-System-DNS-Server-Denial-of-Service-DoS"><span class="nav-number">1.</span> <span class="nav-text">Scenario 1: Domain Name System (DNS) Server Denial of Service (DoS)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Questions-1"><span class="nav-number">1.1.</span> <span class="nav-text">Questions(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Preparation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Detection-and-Analysis"><span class="nav-number">1.1.2.</span> <span class="nav-text">Detection and Analysis</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Questions-2"><span class="nav-number">1.2.</span> <span class="nav-text">Questions (2)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Containment-Eradication-and-Recovery"><span class="nav-number">1.2.1.</span> <span class="nav-text">Containment, Eradication, and Recovery</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Post-Incident-activity"><span class="nav-number">1.2.2.</span> <span class="nav-text">Post-Incident activity</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Additional-questions"><span class="nav-number">1.2.3.</span> <span class="nav-text">Additional questions</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Concepts-in-Information-Security"><span class="nav-number">2.</span> <span class="nav-text">Key Concepts in Information Security</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cyber-Attack-Techniques"><span class="nav-number">3.</span> <span class="nav-text">Cyber Attack Techniques</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-Types-of-Cyber-Attacks"><span class="nav-number">4.</span> <span class="nav-text">Common Types of Cyber Attacks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cyber-Threats-In-Focus-Singapore"><span class="nav-number">5.</span> <span class="nav-text">Cyber Threats In Focus - Singapore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-CSIRT"><span class="nav-number">6.</span> <span class="nav-text">Types of CSIRT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Incident-Response-Lifecycle"><span class="nav-number">7.</span> <span class="nav-text">Incident Response Lifecycle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Maersk-Cyber-Attack"><span class="nav-number">7.1.</span> <span class="nav-text">Maersk Cyber Attack</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Why-was-the-Maersk-attack-so-effective"><span class="nav-number">7.1.0.1.</span> <span class="nav-text">Why was the Maersk attack so effective?</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Why-was-the-Maersk-recovery-so-hard"><span class="nav-number">7.1.0.2.</span> <span class="nav-text">Why was the Maersk recovery so hard?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Containment-Eradication-and-Recovery-1"><span class="nav-number">7.2.</span> <span class="nav-text">Containment, Eradication and Recovery</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#What-would-happen-if-we-moved-on-to-Recovery-or-Post-Incident-Activity-phase-without-full-Eradication"><span class="nav-number">7.2.1.</span> <span class="nav-text">What would happen if we moved on to Recovery or Post-Incident Activity phase without full Eradication?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Containment"><span class="nav-number">7.2.2.</span> <span class="nav-text">Containment</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Containment-Strategy-Considerations"><span class="nav-number">7.2.2.1.</span> <span class="nav-text">Containment Strategy Considerations</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Honeypot"><span class="nav-number">7.2.2.2.</span> <span class="nav-text">Honeypot</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Evidence-Gathering"><span class="nav-number">7.2.2.3.</span> <span class="nav-text">Evidence Gathering</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Eradication"><span class="nav-number">7.2.3.</span> <span class="nav-text">Eradication</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Recovery"><span class="nav-number">7.2.4.</span> <span class="nav-text">Recovery</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Post-Incident-Activity"><span class="nav-number">7.3.</span> <span class="nav-text">Post-Incident Activity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-collected-during-incidents-Cont"><span class="nav-number">7.4.</span> <span class="nav-text">Data collected during incidents (Cont.)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Evidence-Retention"><span class="nav-number">7.5.</span> <span class="nav-text">Evidence Retention</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Incident-Response-Coordinate"><span class="nav-number">8.</span> <span class="nav-text">Incident Response Coordinate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Coordination-Analysis"><span class="nav-number">8.1.</span> <span class="nav-text">Coordination Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Team-to-Team"><span class="nav-number">8.1.1.</span> <span class="nav-text">Team to Team</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Team-to-Coordinating-team"><span class="nav-number">8.1.2.</span> <span class="nav-text">Team to Coordinating team</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Coordinating-Team-to-Coordinating-team"><span class="nav-number">8.1.3.</span> <span class="nav-text">Coordinating Team to Coordinating team</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Essential-Concepts"><span class="nav-number">9.</span> <span class="nav-text">Essential Concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Computer-Forensics"><span class="nav-number">9.1.</span> <span class="nav-text">Computer Forensics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Digital-Evidence"><span class="nav-number">9.2.</span> <span class="nav-text">Digital Evidence</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Metadata"><span class="nav-number">9.3.</span> <span class="nav-text">Metadata</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-Volatility"><span class="nav-number">9.4.</span> <span class="nav-text">Data Volatility</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File-System"><span class="nav-number">9.5.</span> <span class="nav-text">File System</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Disk-Drive-and-SSD"><span class="nav-number">9.6.</span> <span class="nav-text">Disk Drive and SSD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-Forensics"><span class="nav-number">10.</span> <span class="nav-text">Windows Forensics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#File-Locations"><span class="nav-number">10.1.</span> <span class="nav-text">File Locations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Auto-Start"><span class="nav-number">10.2.</span> <span class="nav-text">Auto Start</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hidden-Files"><span class="nav-number">10.3.</span> <span class="nav-text">Hidden Files</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Alternate-Data-Streams"><span class="nav-number">10.4.</span> <span class="nav-text">Alternate Data Streams</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Prefetch"><span class="nav-number">10.5.</span> <span class="nav-text">Prefetch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sigcheck"><span class="nav-number">10.6.</span> <span class="nav-text">Sigcheck</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Timeline-analysis"><span class="nav-number">10.7.</span> <span class="nav-text">Timeline analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows-Registry-Analysis"><span class="nav-number">10.8.</span> <span class="nav-text">Windows Registry Analysis</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory-Forensics"><span class="nav-number">11.</span> <span class="nav-text">Memory Forensics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NorthBridge"><span class="nav-number">11.1.</span> <span class="nav-text">NorthBridge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SouthBridge"><span class="nav-number">11.2.</span> <span class="nav-text">SouthBridge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#More-on-RAM"><span class="nav-number">11.3.</span> <span class="nav-text">More on RAM</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DRAM-Dynamic-RAM"><span class="nav-number">11.3.1.</span> <span class="nav-text">DRAM (Dynamic RAM)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SRAM-Static-RAM"><span class="nav-number">11.3.2.</span> <span class="nav-text">SRAM (Static RAM)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#VRAM-Video-RAM"><span class="nav-number">11.3.3.</span> <span class="nav-text">VRAM (Video RAM)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NVRAM-Non-Volatile-RAM"><span class="nav-number">11.3.4.</span> <span class="nav-text">NVRAM (Non-Volatile RAM)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SDRAM-Synchronous-DRAM"><span class="nav-number">11.3.5.</span> <span class="nav-text">SDRAM (Synchronous DRAM)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Why-Memory-Forensics"><span class="nav-number">11.4.</span> <span class="nav-text">Why Memory Forensics?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Challenges"><span class="nav-number">11.5.</span> <span class="nav-text">Challenges</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Structure"><span class="nav-number">11.5.1.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Volatility"><span class="nav-number">11.5.2.</span> <span class="nav-text">Volatility</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fantasy-May"
+      src="/images/IMG_0039.png">
+  <p class="site-author-name" itemprop="name">Fantasy-May</p>
+  <div class="site-description" itemprop="description">Hello World!</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+
+
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fantasy-May</span>
+</div>
+
+<!--
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
