@@ -190,8 +190,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-03-21 22:49:25" itemprop="dateModified" datetime="2024-03-21T22:49:25+08:00">2024-03-21</time>
+                <time title="Modified: 2024-03-22 00:31:04" itemprop="dateModified" datetime="2024-03-22T00:31:04+08:00">2024-03-22</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cyber-Security/" itemprop="url" rel="index"><span itemprop="name">Cyber Security</span></a>
+                </span>
+            </span>
 
           
 
@@ -217,180 +226,14 @@
 <li>Possession (Control)</li>
 <li>Utility</li>
 </ul>
-<h5 id="McCumber-Cube"><a href="#McCumber-Cube" class="headerlink" title="McCumber Cube"></a>McCumber Cube</h5><ul>
-<li><p>security goals: CIA</p>
-</li>
-<li><p>information states: transimission, storage, processing</p>
-</li>
-<li><p>counter measures: technology, people, policy&amp;practice</p>
-</li>
-</ul>
-<h5 id="Functional-perspective-of-security"><a href="#Functional-perspective-of-security" class="headerlink" title="Functional perspective of security"></a>Functional perspective of security</h5><p>What should the system do?</p>
-<h5 id="Assurance-perspective-of-security"><a href="#Assurance-perspective-of-security" class="headerlink" title="Assurance perspective of security"></a>Assurance perspective of security</h5><p>How do we ensure that they are achieved? Controls …</p>
-<h4 id="Common-Criteria-CC"><a href="#Common-Criteria-CC" class="headerlink" title="Common Criteria (CC)"></a>Common Criteria (CC)</h4><p>Basis for evaluation of security propertys of IT products; standard for IT security evaluation</p>
-<p>Common set of requirements for security <strong>functionality</strong> and <strong>assurance</strong> measures (<strong>IT security requirements</strong>)</p>
-<p>Permits comparability between results of independent security evaluations</p>
-<p>Useful guide for: development, evaluation, procurement</p>
-<h5 id="shortcomings"><a href="#shortcomings" class="headerlink" title="shortcomings"></a>shortcomings</h5><ul>
-<li>consuming time and money</li>
-<li>assurance is limited to TOE</li>
-<li>minor changes in design/implement will make products invalid</li>
-</ul>
-<h4 id="Quantitative-Risk-Analysis"><a href="#Quantitative-Risk-Analysis" class="headerlink" title="Quantitative Risk Analysis"></a>Quantitative Risk Analysis</h4><h5 id="ALE"><a href="#ALE" class="headerlink" title="ALE"></a>ALE</h5><p>SLE (Single loss expectancy) = AV(Asset value)*EF(Explosure factor)</p>
-<p>ALE(Annualized loss expectancy) = SLE*ARO(Annual rate of occurence)</p>
-<h6 id="shortcommings"><a href="#shortcommings" class="headerlink" title="shortcommings"></a>shortcommings</h6><ul>
-<li><p>We cannot distinguish high-frequency, low-impact events from low frequency, high-impact events based on such a single simplified number</p>
-</li>
-<li><p>False sense of accuracy</p>
-</li>
-</ul>
-<h5 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h5><ul>
-<li>different strategies will have different cash flow</li>
-<li>secondary effects, intangible assets</li>
-<li>a lot of guess work</li>
-</ul>
-<h4 id="Actualizing-risk-analysis"><a href="#Actualizing-risk-analysis" class="headerlink" title="Actualizing risk analysis"></a>Actualizing risk analysis</h4><h5 id="Attack-Trees"><a href="#Attack-Trees" class="headerlink" title="Attack Trees"></a>Attack Trees</h5><p>Qualify an attack in different dimensions </p>
-<ul>
-<li><p>leaf nodes: attack initiation</p>
-</li>
-<li><p>root node: attack goal</p>
-</li>
-<li><p>and: conjuct to achieve the goal</p>
-</li>
-<li><p>or: different ways to achieve the goal</p>
-</li>
-</ul>
-<h6 id="Attack-Trees-Can"><a href="#Attack-Trees-Can" class="headerlink" title="Attack Trees Can"></a>Attack Trees Can</h6><ul>
-<li>be qualified with attributes(time, money, probability)</li>
-<li>made as detailed as possible</li>
-<li>identify the perferred attack vectors</li>
-</ul>
-<h5 id="Fault-Tree-Analysis-FTA"><a href="#Fault-Tree-Analysis-FTA" class="headerlink" title="Fault Tree Analysis (FTA)"></a>Fault Tree Analysis (FTA)</h5><p>FTA is a general purpose technique used for system reliability and safety engineering, risk assessment</p>
-<ul>
-<li><p>an undesirable system state</p>
-</li>
-<li><p>arrived at using Boolean logic combining series of lower-level events</p>
-</li>
-</ul>
-<h5 id="Event-Tree-Analysis-ETA"><a href="#Event-Tree-Analysis-ETA" class="headerlink" title="Event Tree Analysis (ETA)"></a>Event Tree Analysis (ETA)</h5><p>Lays a path for accessing probability of various outcomes (in a single initiating event)</p>
-<h5 id="Failure-Mode-amp-Effect-Analysis"><a href="#Failure-Mode-amp-Effect-Analysis" class="headerlink" title="Failure Mode &amp; Effect Analysis"></a>Failure Mode &amp; Effect Analysis</h5><p>Review as many components/subsystems as possible to identify failure modes, their causes and effects</p>
-<h6 id="RPN"><a href="#RPN" class="headerlink" title="RPN"></a>RPN</h6><p>Risk probability number (RPN) = prob * det * sev</p>
-<ul>
-<li><p>prob (prob that the failure will <strong>occur</strong>)</p>
-</li>
-<li><p>det (prob that the failure will <strong>not be detected</strong>)</p>
-</li>
-<li><p>sev (<strong>damage</strong> that the failure mode may cause; <strong>severity</strong>)</p>
-</li>
-</ul>
-<h4 id="Controls"><a href="#Controls" class="headerlink" title="Controls"></a>Controls</h4><h5 id="According-to-purpose"><a href="#According-to-purpose" class="headerlink" title="According to purpose"></a>According to purpose</h5><ul>
-<li>preventive (authenticate)</li>
-<li>detective (detect)</li>
-<li>corrective (backup)</li>
-</ul>
-<h5 id="According-to-nature"><a href="#According-to-nature" class="headerlink" title="According to nature"></a>According to nature</h5><ul>
-<li>physical (who can access data center)</li>
-<li>procedual (response process)</li>
-<li>technical (authentication)</li>
-<li>legal &amp; regulatory / compliance (laws)</li>
-</ul>
-<h5 id="Designing-Controls"><a href="#Designing-Controls" class="headerlink" title="Designing Controls"></a>Designing Controls</h5><h6 id="Layered-Defence"><a href="#Layered-Defence" class="headerlink" title="Layered Defence"></a>Layered Defence</h6><ul>
-<li>Apply Supplementary Controls</li>
-<li>Independent Controls (2FA)</li>
-</ul>
-<h6 id="Defence-in-Depth"><a href="#Defence-in-Depth" class="headerlink" title="Defence in Depth"></a>Defence in Depth</h6><ul>
-<li><p>Defence in depth requires multi-layered defence</p>
-</li>
-<li><p>strategy: People, Technology, Operations</p>
-</li>
-</ul>
-<h4 id="Vulnerabilities-can-be-created-in"><a href="#Vulnerabilities-can-be-created-in" class="headerlink" title="Vulnerabilities can be created in"></a>Vulnerabilities can be created in</h4><p>Design, Implementation, Configureation</p>
-<h4 id="3-best-practices-for-data-backup"><a href="#3-best-practices-for-data-backup" class="headerlink" title="3 best practices for data backup"></a>3 best practices for data backup</h4><ul>
-<li>regular and frequency backup</li>
-<li>regular testing</li>
-<li>encrypt</li>
-</ul>
-<h4 id="Information-Security"><a href="#Information-Security" class="headerlink" title="Information Security"></a>Information Security</h4><h5 id="Cybersecurity-amp-Infosec-Differences"><a href="#Cybersecurity-amp-Infosec-Differences" class="headerlink" title="Cybersecurity &amp; Infosec Differences"></a>Cybersecurity &amp; Infosec Differences</h5><ul>
-<li>Infosec protects data across all mediums, Cybersecurity protects data in cyberspace</li>
-<li>Cybersecurity protects non-information based assets </li>
-<li>cybersecurity: Antivirus software, firewall</li>
-<li>infosec: Encrypt data, providing security awareness training</li>
-</ul>
-<h5 id="Information-Risk-Management-Information-Security"><a href="#Information-Risk-Management-Information-Security" class="headerlink" title="Information Risk Management (Information Security)"></a>Information Risk Management (Information Security)</h5><p>Prioritize resource allocation</p>
-<p>Given limited budget &amp;  no perfect security, minimize loss/damage</p>
-<h5 id="Information-Security-Continuous-Monitoring-ISCM"><a href="#Information-Security-Continuous-Monitoring-ISCM" class="headerlink" title="Information Security Continuous Monitoring (ISCM)"></a>Information Security Continuous Monitoring (ISCM)</h5><ul>
-<li><p>tier-1: high level governance issues (risk)</p>
-</li>
-<li><p>tier-2: core <strong>missions/business processes</strong></p>
-</li>
-<li><p>tier-3: <strong>information system</strong> perspective</p>
-</li>
-</ul>
-<h4 id="Sarbanes-Oxley-Act"><a href="#Sarbanes-Oxley-Act" class="headerlink" title="Sarbanes-Oxley Act"></a>Sarbanes-Oxley Act</h4><ul>
-<li>CEO and CFO must certify that reports are accurance and complete</li>
-<li>Assessment must be reviewed and judged by an outside auditing firm</li>
-</ul>
-<h4 id="Personal-Data-Protect-Act-PDPA"><a href="#Personal-Data-Protect-Act-PDPA" class="headerlink" title="Personal Data Protect Act (PDPA)"></a>Personal Data Protect Act (PDPA)</h4><p>Personal data protection commission (PDPC) organizations are required to:</p>
-<ul>
-<li>implement policies and practices to protect personal data</li>
-<li>data protection officer (DPO) oversee the data protection responsibilities</li>
-</ul>
-<h4 id="NIST-Engineering-Principles-for-IT-Security"><a href="#NIST-Engineering-Principles-for-IT-Security" class="headerlink" title="NIST (Engineering Principles for IT Security)"></a>NIST (Engineering Principles for IT Security)</h4><p>initation, develop/acquisition, implement, operate/maintain, disposal</p>
-<h4 id="Factors-leading-to-enlarged-attack-surface"><a href="#Factors-leading-to-enlarged-attack-surface" class="headerlink" title="Factors leading to enlarged attack surface"></a>Factors leading to enlarged attack surface</h4><p>connectivity, complexity, extensibility</p>
-<h4 id="Business-Impact-Analysis-BIA"><a href="#Business-Impact-Analysis-BIA" class="headerlink" title="Business Impact Analysis (BIA)"></a>Business Impact Analysis (BIA)</h4><ol>
-<li>identify critical things (products, processes, services) that need to be restore, meet its critical needs and  statisfy regulations</li>
-<li>identify activities that support critical things</li>
-<li>assest impact overtime of not performing activities</li>
-<li>set prioritized timeframes (eg. maximus tolerable downtime)</li>
-<li>identify dependencies (includes 3-rd)</li>
-</ol>
-<h4 id="Business-Continuity-Planning-BCP"><a href="#Business-Continuity-Planning-BCP" class="headerlink" title="Business Continuity Planning (BCP)"></a>Business Continuity Planning (BCP)</h4><ul>
-<li>Conduct BIA and RA (establish business recovery prorities, timescale&amp;minimum requirements)</li>
-<li>BC Strategy Formulation (options for meeting business recovery prorities, timescale&amp;minimum requirements)</li>
-<li>BCP Production (plans, organizations, detailed action task lists)</li>
-<li>BCP Testing</li>
-<li>BC Awareness</li>
-<li>Ongoing BCP Maintenance</li>
-</ul>
-<h4 id="Disaster-Recover-Plan"><a href="#Disaster-Recover-Plan" class="headerlink" title="Disaster Recover Plan"></a>Disaster Recover Plan</h4><h5 id="Plan-activation"><a href="#Plan-activation" class="headerlink" title="Plan activation"></a>Plan activation</h5><ul>
-<li>triage</li>
-<li>notification </li>
-<li>escalation</li>
-<li>damage assessment </li>
-<li>declaring a disaster</li>
-<li>mobilization of response team</li>
-</ul>
-<h5 id="Disaster-Recover-Plan-and-Cyber-Incident-Response-Plan"><a href="#Disaster-Recover-Plan-and-Cyber-Incident-Response-Plan" class="headerlink" title="Disaster Recover Plan and Cyber Incident Response Plan"></a>Disaster Recover Plan and Cyber Incident Response Plan</h5><h6 id="DRP-recover"><a href="#DRP-recover" class="headerlink" title="DRP (recover)"></a>DRP (recover)</h6><p>Actives after major systems disruptions with long-term effects</p>
-<p>To recover and reestablish functionalities</p>
-<h6 id="CIRP-mitigating-impact"><a href="#CIRP-mitigating-impact" class="headerlink" title="CIRP (mitigating impact)"></a>CIRP (mitigating impact)</h6><p>Masticate and isolate affected systems</p>
-<p>To minimize loss of information</p>
-<h4 id="Overall-Planning-amp-Management"><a href="#Overall-Planning-amp-Management" class="headerlink" title="Overall Planning &amp; Management"></a>Overall Planning &amp; Management</h4><h5 id="Emergency-Response"><a href="#Emergency-Response" class="headerlink" title="Emergency Response"></a>Emergency Response</h5><ul>
-<li>Time critical</li>
-<li>Initial control of emergency situation</li>
-<li>Save human life</li>
-<li>Stabilizing, security, damage assessment</li>
-</ul>
-<h5 id="Crisis-Management"><a href="#Crisis-Management" class="headerlink" title="Crisis Management"></a>Crisis Management</h5><ul>
-<li>Strategic direction/Policy issues</li>
-<li>Crisis communications</li>
-<li>External liaison</li>
-<li>Service recovery coordination</li>
-</ul>
-<h5 id="Bussiness-Recovery"><a href="#Bussiness-Recovery" class="headerlink" title="Bussiness Recovery"></a>Bussiness Recovery</h5><ul>
-<li>Phased Recovery of business-critical process/servies</li>
-<li>Disaster Recovery</li>
-</ul>
-<h4 id="PDCA-cycle"><a href="#PDCA-cycle" class="headerlink" title="PDCA cycle"></a>PDCA cycle</h4><p>A manage method for control/improvement of process/products</p>
-<ul>
-<li>Plan (establish)</li>
-<li>Do (implement)</li>
-<li>Check (monitor, review &amp; audit)</li>
-<li>Act (maintain, improve)</li>
-</ul>
-<h4 id="Terms"><a href="#Terms" class="headerlink" title="Terms"></a>Terms</h4><h5 id="non-conformity"><a href="#non-conformity" class="headerlink" title="non-conformity"></a>non-conformity</h5><p>non-fulfilled of a requirement</p>
-<h5 id="policy"><a href="#policy" class="headerlink" title="policy"></a>policy</h5><p>overall intention and direction as formally expressed by management</p>
-<h5 id="risk"><a href="#risk" class="headerlink" title="risk"></a>risk</h5><p>effect of uncertainty on objectives</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/03/01/Security%20&%20Risk%20Management/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -476,6 +319,12 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">

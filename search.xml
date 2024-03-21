@@ -16,6 +16,8 @@
 <li>Possession (Control)</li>
 <li>Utility</li>
 </ul>
+<span id="more"></span>
+
 <h5 id="McCumber-Cube"><a href="#McCumber-Cube" class="headerlink" title="McCumber Cube"></a>McCumber Cube</h5><ul>
 <li><p>security goals: CIA</p>
 </li>
@@ -190,6 +192,9 @@
 <h5 id="policy"><a href="#policy" class="headerlink" title="policy"></a>policy</h5><p>overall intention and direction as formally expressed by management</p>
 <h5 id="risk"><a href="#risk" class="headerlink" title="risk"></a>risk</h5><p>effect of uncertainty on objectives</p>
 ]]></content>
+      <categories>
+        <category>Cyber Security</category>
+      </categories>
       <tags>
         <tag>Quiz1</tag>
       </tags>
